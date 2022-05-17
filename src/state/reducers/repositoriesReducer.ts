@@ -1,4 +1,4 @@
-import { ActionType } from '../action-types/index';
+import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
 interface RepositoriesState {
@@ -7,10 +7,16 @@ interface RepositoriesState {
 	data: string[];
 }
 
+const initialState = {
+	loading: false,
+	error: null,
+	data: [],
+};
+
 const reducer = (
-	state: RepositoriesState,
+	state: RepositoriesState = initialState,
 	action: Action
-): RepositoriesState | undefined => {
+): RepositoriesState => {
 	switch (action.type) {
 		case ActionType.SEARCH_REPOSITORIES:
 			return { loading: true, error: null, data: [] };
@@ -19,7 +25,7 @@ const reducer = (
 		case ActionType.SEARCH_REPOSITORIES_ERROR:
 			return { loading: false, error: action.payload, data: [] };
 		default:
-			state;
+			return state;
 	}
 };
 
