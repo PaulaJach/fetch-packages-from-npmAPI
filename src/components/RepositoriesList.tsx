@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelectors';
 import { useActions } from '../hooks/useActions';
+
+import styles from './RepositoriesList.module.css';
 
 const RepositoriesList: React.FC = () => {
 	const [term, setTerm] = useState('');
@@ -13,15 +15,27 @@ const RepositoriesList: React.FC = () => {
 		e.preventDefault();
 		searchRepositories(term);
 	};
+
+	const repositoriesList = data.map((name) => (
+		<li className={styles.main__listItem} key={name}>
+			{name}
+		</li>
+	));
 	return (
 		<div>
 			<form onSubmit={onSubmitHandler}>
-				<input value={term} onChange={(e) => setTerm(e.target.value)} />
-				<button>Search</button>
+				<input
+					className={styles.input}
+					value={term}
+					onChange={(e) => setTerm(e.target.value)}
+				/>
+				<button className={styles.btn}>Search</button>
 			</form>
-			{error && <h3>{error}</h3>}
-			{loading && <h3>Loading ...</h3>}
-			{!error && !loading && data.map((name) => <div key={name}>{name}</div>)}
+			<main>
+				{error && <h3>{error}</h3>}
+				{loading && <h3>Loading ...</h3>}
+				{!error && !loading && repositoriesList}
+			</main>
 		</div>
 	);
 };
