@@ -1,17 +1,21 @@
-input {
+.form {
+	display: flex;
+	justify-content: center;
+}
+
+.form__input {
 	padding: 0.75rem 1.5rem;
 	margin-right: 0.5rem;
 	font-size: 1rem;
 	border-radius: 4px;
 }
 
-input:focused {
+.form__input:focused {
 	font-size: 3rem;
 	font-weight: bold;
 	color: white;
 }
-
-.btn {
+.form__btn {
 	text-decoration: none;
 	background-color: teal;
 	color: white;
@@ -21,12 +25,29 @@ input:focused {
 	cursor: pointer;
 }
 
-.btn:hover,
-.btn:active {
+.form__btn:hover,
+.form__btn:active {
 	background-color: #11acac;
 	border-color: #11acac;
 }
 
-main {
-	margin-top: 2rem;
+.main {
+	margin: 1rem 2rem;
+	display: flex;
+	justify-content: center;
 }
+.main__list {
+	padding: 1rem;
+}
+.main__listItem {
+	margin-bottom: .6rem;
+}
+.main__span {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 720px) {
+	.main {
+		font-size: .9rem;
+	}
+  }

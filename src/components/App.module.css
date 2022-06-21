@@ -16,3 +16,17 @@ body {
 	align-items: center;
 	flex-direction: column;
 }
+
+.container__header {
+	color: #1c422e;
+	margin: .5rem auto;
+	text-align: center;
+	padding: 0 .5rem;
+}
+
+@media screen and (max-width: 720px) {
+	.container__header {
+		font-size: .8rem;
+	}
+  }
+  

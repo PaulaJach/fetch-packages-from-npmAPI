@@ -7,7 +7,10 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<div className={styles.container}>
-				<h1> Search For a NPM Package</h1>
+				<header className={styles.container__header}>
+					<h1> Search For a NPM Package</h1>
+					<i>Type any technology or tool to get npm package name and its description:</i>
+				</header>
 				<RepositoriesList />
 			</div>
 		</Provider>

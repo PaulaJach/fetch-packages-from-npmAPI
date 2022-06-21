@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-import { resourceLimits } from 'worker_threads';
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
@@ -19,13 +18,13 @@ export const searchRepositories = (term: string) => {
 				}
 			);
 
-			const names = data.objects.map((result: any) => {
-				return result.package.name;
+			const packages = data.objects.map((result: any) => {
+				return {name: result.package.name, description: result.package.description};
 			});
 
 			dispatch({
 				type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
-				payload: names,
+				payload: packages
 			});
 		} catch (err: any) {
 			dispatch({
