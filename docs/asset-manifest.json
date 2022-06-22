@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fetch-packages-from-npmAPI/static/css/main.22fd08a7.css",
+    "main.js": "/fetch-packages-from-npmAPI/static/js/main.c74827c7.js",
+    "index.html": "/fetch-packages-from-npmAPI/index.html",
+    "main.22fd08a7.css.map": "/fetch-packages-from-npmAPI/static/css/main.22fd08a7.css.map",
+    "main.c74827c7.js.map": "/fetch-packages-from-npmAPI/static/js/main.c74827c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22fd08a7.css",
+    "static/js/main.c74827c7.js"
+  ]
+}
